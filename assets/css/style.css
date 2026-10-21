@@ -438,3 +438,27 @@ footer{border-top:1px solid var(--border);background:var(--bg-soft);margin-top:0
   #showcase3d{aspect-ratio:1/1;max-height:440px}
   .hero-inner{padding:56px 0 48px}
 }
+
+/* ============ Launch-week offer banner + countdown ============ */
+.offer-banner{display:flex;align-items:center;gap:28px;flex-wrap:wrap;text-decoration:none;color:inherit;
+  background:linear-gradient(120deg,rgba(124,58,237,.22),rgba(238,42,123,.14)),var(--bg-soft,#150b26);
+  border:1px solid rgba(201,162,39,.45);border-radius:20px;padding:26px 30px;position:relative;overflow:hidden;
+  box-shadow:0 18px 50px rgba(124,58,237,.25);transition:transform .2s ease,box-shadow .2s ease}
+.offer-banner:hover{transform:translateY(-3px);box-shadow:0 24px 60px rgba(238,42,123,.3)}
+.offer-banner::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 90% at 85% 20%,rgba(255,209,102,.14),transparent 70%)}
+.offer-copy{flex:1 1 260px;position:relative}
+.offer-kicker{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  color:#ffd166;background:rgba(201,162,39,.16);border:1px solid rgba(201,162,39,.5);padding:5px 12px;border-radius:999px;margin-bottom:10px}
+.offer-copy h2{margin:0 0 6px;font-size:1.5rem}
+.offer-price{color:#ffd166;white-space:nowrap}
+.offer-price s{color:var(--muted,#a79fc0);font-weight:500;font-size:1.05rem;margin-right:8px}
+.offer-copy p{margin:0;opacity:.75;font-size:.92rem}
+.offer-timer{display:flex;gap:10px;position:relative}
+.offer-timer .cd{display:flex;flex-direction:column;align-items:center;min-width:64px;padding:10px 8px;
+  background:rgba(13,7,22,.6);border:1px solid rgba(157,107,255,.4);border-radius:12px}
+.offer-timer .cd b{font-size:1.4rem;color:#fff;font-variant-numeric:tabular-nums}
+.offer-timer .cd i{font-style:normal;font-size:.62rem;letter-spacing:1px;text-transform:uppercase;opacity:.6}
+.offer-cta{position:relative;font-weight:800;color:#0d0716;background:linear-gradient(135deg,#ffd166,#ee2a7b);
+  padding:12px 22px;border-radius:999px;white-space:nowrap}
+@media(max-width:640px){.offer-banner{gap:18px;padding:22px}.offer-timer .cd{min-width:56px}}
