@@ -449,7 +449,38 @@ document.addEventListener("DOMContentLoaded", () => {
   if (page === "cart") initCart();
   if (page === "blog") initBlog();
   if (page === "post") initPost();
+  initOfferCountdowns();
 });
+
+/* ============ Time-limited offer countdowns ============ */
+/* Any element with [data-countdown]="ISO end datetime" gets a live ticking
+   timer; when the offer expires the closest [data-offer] wrapper hides itself. */
+function initOfferCountdowns(){
+  var els = document.querySelectorAll("[data-countdown]");
+  if(!els.length) return;
+  function pad(n){return (n<10?"0":"")+n;}
+  function tick(){
+    var now = Date.now(), anyLive = false;
+    els.forEach(function(el){
+      var end = new Date(el.getAttribute("data-countdown")).getTime();
+      var wrap = el.closest("[data-offer]");
+      var diff = end - now;
+      if(diff <= 0){
+        if(wrap) wrap.style.display = "none";
+        return;
+      }
+      anyLive = true;
+      var d = Math.floor(diff/864e5), h = Math.floor(diff%864e5/36e5),
+          m = Math.floor(diff%36e5/6e4), s = Math.floor(diff%6e4/1e3);
+      el.innerHTML = '<span class="cd"><b>'+d+'</b><i>days</i></span>'
+        + '<span class="cd"><b>'+pad(h)+'</b><i>hrs</i></span>'
+        + '<span class="cd"><b>'+pad(m)+'</b><i>min</i></span>'
+        + '<span class="cd"><b>'+pad(s)+'</b><i>sec</i></span>';
+    });
+    if(anyLive) setTimeout(tick, 1000);
+  }
+  tick();
+}
 
 /* ============ Floating social rail: Instagram + WhatsApp community ============ */
 (function(){
