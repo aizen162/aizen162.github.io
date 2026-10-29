@@ -505,8 +505,8 @@
   "name": "CRT Unlocked by Romeo CRT",
   "slug": "crt-unlocked-by-romeo",
   "category": "trading-courses",
-  "price": 6.99,
-  "badge": "🔥 Launch Offer",
+  "price": 9.99,
+  "badge": "New",
   "rating": 5.0,
   "reviews": 0,
   "image": "assets/img/p23.jpg",
@@ -526,8 +526,7 @@
    "🔒 Lecture 12"
   ],
   "previewVideo": "https://drive.google.com/file/d/1lTqkF1K1FIN-45SIZKi8ZfyAVDK5zBLH/preview",
-  "topic": "crt",
-  "oldPrice": 9.99
+  "topic": "crt"
  },
  {
   "id": "p24",
